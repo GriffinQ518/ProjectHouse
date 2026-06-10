@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cxf0v1ifan0j3"]
+
+[ext_resource type="Material" uid="uid://c785de0hau32y" path="res://window.tres" id="1_37kl0"]
+[ext_resource type="Material" uid="uid://bg0p0kt56sc21" path="res://box.tres" id="2_8uh7m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8uh7m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6uqi0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ppyta"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6uqi0"]
+
+[node name="Test" type="Node3D" unique_id=1681013421]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1323531750]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_8uh7m")
+
+[node name="Window" type="MeshInstance3D" parent="." unique_id=662786240]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2, 0)
+material_override = ExtResource("1_37kl0")
+transparency = 1.0
+mesh = SubResource("PlaneMesh_6uqi0")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=1915760398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+material_override = ExtResource("2_8uh7m")
+mesh = SubResource("BoxMesh_ppyta")
+
+[node name="Frame" type="Node3D" parent="." unique_id=1895737901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="FrameTop" type="MeshInstance3D" parent="Frame" unique_id=1056863910]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.25, 0)
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="FrameRight" type="MeshInstance3D" parent="Frame" unique_id=675882538]
+transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 0.5, 1.25, 0, 0)
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="FrameLeft" type="MeshInstance3D" parent="Frame" unique_id=633934617]
+transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 0.5, -1.25, 0, 0)
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="FrameBottom" type="MeshInstance3D" parent="Frame" unique_id=636782223]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.25, 0)
+mesh = SubResource("BoxMesh_6uqi0")
