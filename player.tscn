@@ -4,6 +4,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
+
 [node name="Player" type="CharacterBody3D" unique_id=854424897]
 script = ExtResource("1_4flbx")
 
@@ -12,4 +14,10 @@ shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="ModelPivot" type="Node3D" parent="." unique_id=839096947]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ModelPivot" unique_id=1623453455]
+mesh = SubResource("CapsuleMesh_4flbx")
+
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1751225991]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=191109892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0415529, 0)
