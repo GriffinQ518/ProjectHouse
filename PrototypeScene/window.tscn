@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bj7g5f8flx8ef"]
+
+[ext_resource type="Script" uid="uid://ceii61ytrgq6g" path="res://PrototypeScene/window.gd" id="1_tikg1"]
+[ext_resource type="Material" uid="uid://3tbg6glslyr6" path="res://PrototypeScene/StencilMask.tres" id="2_ggmx2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_173h8"]
+
+[node name="Window" type="Node3D" unique_id=1887535040]
+script = ExtResource("1_tikg1")
+
+[node name="Mask" type="MeshInstance3D" parent="." unique_id=203548207]
+transform = Transform3D(-2.1855694e-08, 1, 0, -0.5, -4.371139e-08, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = ExtResource("2_ggmx2")
+transparency = 1.0
+mesh = SubResource("PlaneMesh_173h8")
