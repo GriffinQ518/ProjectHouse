@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://cxf0v1ifan0j3"]
+
+[ext_resource type="Material" uid="uid://c785de0hau32y" path="res://TestScene/window.tres" id="1_37kl0"]
+[ext_resource type="Material" uid="uid://bg0p0kt56sc21" path="res://TestScene/box.tres" id="2_8uh7m"]
+[ext_resource type="Material" uid="uid://lic0rv1ge8y4" path="res://TestScene/window1.tres" id="3_00tp4"]
+[ext_resource type="Material" uid="uid://clc6e1uqqoars" path="res://TestScene/object1.tres" id="4_77dp3"]
+[ext_resource type="Material" uid="uid://chi4lhwfrjp6n" path="res://TestScene/window2.tres" id="5_5tkv4"]
+[ext_resource type="Material" uid="uid://euwut8tkjiaa" path="res://TestScene/object2.tres" id="6_0m0f1"]
+[ext_resource type="Material" uid="uid://cttueqvl81unt" path="res://TestScene/window3.tres" id="7_b0q6j"]
+[ext_resource type="Material" uid="uid://dphqvsvsmmooo" path="res://TestScene/object3.tres" id="8_mhym6"]
+[ext_resource type="Material" uid="uid://wlp614233u7l" path="res://TestScene/window4.tres" id="9_a3se8"]
+[ext_resource type="Material" uid="uid://m0chn4r5yw7" path="res://TestScene/object4.tres" id="10_uty7l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8uh7m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6uqi0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ppyta"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6uqi0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ykrsh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_45l4g"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4uo0j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxl6d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eski5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pdf00"]
+
+[node name="Test" type="Node3D" unique_id=1681013421]
+
+[node name="WindowTest" type="Node3D" parent="." unique_id=632332101]
+
+[node name="Floor" type="MeshInstance3D" parent="WindowTest" unique_id=1323531750]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_8uh7m")
+
+[node name="Window" type="MeshInstance3D" parent="WindowTest" unique_id=662786240]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2, 0)
+material_override = ExtResource("1_37kl0")
+transparency = 1.0
+mesh = SubResource("PlaneMesh_6uqi0")
+
+[node name="Box" type="MeshInstance3D" parent="WindowTest" unique_id=1915760398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+material_override = ExtResource("2_8uh7m")
+mesh = SubResource("BoxMesh_ppyta")
+
+[node name="Frame" type="Node3D" parent="WindowTest" unique_id=1895737901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="FrameTop" type="MeshInstance3D" parent="WindowTest/Frame" unique_id=1056863910]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.25, 0)
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="FrameRight" type="MeshInstance3D" parent="WindowTest/Frame" unique_id=675882538]
+transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 0.5, 1.25, 0, 0)
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="FrameLeft" type="MeshInstance3D" parent="WindowTest/Frame" unique_id=633934617]
+transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 0.5, -1.25, 0, 0)
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="FrameBottom" type="MeshInstance3D" parent="WindowTest/Frame" unique_id=636782223]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.25, 0)
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="BoxTest" type="Node3D" parent="." unique_id=2022808047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="BoxTest" unique_id=143809126]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_8uh7m")
+
+[node name="Box" type="Node3D" parent="BoxTest" unique_id=1085284764]
+
+[node name="Frame" type="Node3D" parent="BoxTest/Box" unique_id=384047131]
+
+[node name="BoxBottom" type="MeshInstance3D" parent="BoxTest/Box/Frame" unique_id=82634556]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, 0, 0.75, 0)
+mesh = SubResource("BoxMesh_ykrsh")
+
+[node name="BoxTop" type="MeshInstance3D" parent="BoxTest/Box/Frame" unique_id=535379582]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, 0, 2.25, 0)
+mesh = SubResource("BoxMesh_ykrsh")
+
+[node name="BoxFrontLeft" type="MeshInstance3D" parent="BoxTest/Box/Frame" unique_id=315558160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 1)
+mesh = SubResource("BoxMesh_ykrsh")
+
+[node name="BoxBackLeft" type="MeshInstance3D" parent="BoxTest/Box/Frame" unique_id=557718380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -1)
+mesh = SubResource("BoxMesh_ykrsh")
+
+[node name="BoxFrontRight" type="MeshInstance3D" parent="BoxTest/Box/Frame" unique_id=681194166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 1)
+mesh = SubResource("BoxMesh_ykrsh")
+
+[node name="BoxBackRight" type="MeshInstance3D" parent="BoxTest/Box/Frame" unique_id=959421458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -1)
+mesh = SubResource("BoxMesh_ykrsh")
+
+[node name="Side1" type="Node3D" parent="BoxTest/Box" unique_id=2008151591]
+
+[node name="Window" type="MeshInstance3D" parent="BoxTest/Box/Side1" unique_id=1136841371]
+transform = Transform3D(0.5, 0, 0, 0, -4.371139e-08, -0.5, 0, 1, -2.1855694e-08, 0, 1.5, 1.5)
+material_override = ExtResource("3_00tp4")
+transparency = 1.0
+mesh = SubResource("PlaneMesh_45l4g")
+
+[node name="Object" type="MeshInstance3D" parent="BoxTest/Box/Side1" unique_id=575290452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+material_override = ExtResource("4_77dp3")
+mesh = SubResource("SphereMesh_4uo0j")
+
+[node name="WallLeft" type="MeshInstance3D" parent="BoxTest/Box/Side1" unique_id=1393888905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+material_override = ExtResource("4_77dp3")
+mesh = SubResource("BoxMesh_vxl6d")
+
+[node name="WallRight" type="MeshInstance3D" parent="BoxTest/Box/Side1" unique_id=1483752305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+material_override = ExtResource("4_77dp3")
+mesh = SubResource("BoxMesh_eski5")
+
+[node name="WallBack" type="MeshInstance3D" parent="BoxTest/Box/Side1" unique_id=1954380601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)
+material_override = ExtResource("4_77dp3")
+mesh = SubResource("BoxMesh_pdf00")
+
+[node name="Side2" type="Node3D" parent="BoxTest/Box" unique_id=1930399800]
+
+[node name="Window" type="MeshInstance3D" parent="BoxTest/Box/Side2" unique_id=338192516]
+transform = Transform3D(-2.1855694e-08, 1, -2.1855694e-08, 0, -4.371139e-08, -0.5, -0.5, -4.371139e-08, 9.553427e-16, 1.5, 1.5, 0)
+material_override = ExtResource("5_5tkv4")
+transparency = 1.0
+mesh = SubResource("PlaneMesh_45l4g")
+
+[node name="Object" type="MeshInstance3D" parent="BoxTest/Box/Side2" unique_id=859208515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+material_override = ExtResource("6_0m0f1")
+mesh = SubResource("SphereMesh_4uo0j")
+
+[node name="WallLeft" type="MeshInstance3D" parent="BoxTest/Box/Side2" unique_id=349665519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1)
+material_override = ExtResource("6_0m0f1")
+mesh = SubResource("BoxMesh_vxl6d")
+
+[node name="WallRight" type="MeshInstance3D" parent="BoxTest/Box/Side2" unique_id=1430164960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)
+material_override = ExtResource("6_0m0f1")
+mesh = SubResource("BoxMesh_eski5")
+
+[node name="WallBack" type="MeshInstance3D" parent="BoxTest/Box/Side2" unique_id=742269677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+material_override = ExtResource("6_0m0f1")
+mesh = SubResource("BoxMesh_pdf00")
+
+[node name="Side3" type="Node3D" parent="BoxTest/Box" unique_id=966850578]
+
+[node name="Window" type="MeshInstance3D" parent="BoxTest/Box/Side3" unique_id=1388482651]
+transform = Transform3D(0.5, 0, 0, 0, -4.371139e-08, 0.5, 0, -1, -2.1855694e-08, 0, 1.5, -1.5)
+material_override = ExtResource("7_b0q6j")
+transparency = 1.0
+mesh = SubResource("PlaneMesh_45l4g")
+
+[node name="Object" type="MeshInstance3D" parent="BoxTest/Box/Side3" unique_id=980634759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+material_override = ExtResource("8_mhym6")
+mesh = SubResource("SphereMesh_4uo0j")
+
+[node name="WallLeft" type="MeshInstance3D" parent="BoxTest/Box/Side3" unique_id=1491313035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+material_override = ExtResource("8_mhym6")
+mesh = SubResource("BoxMesh_vxl6d")
+
+[node name="WallRight" type="MeshInstance3D" parent="BoxTest/Box/Side3" unique_id=1253317670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+material_override = ExtResource("8_mhym6")
+mesh = SubResource("BoxMesh_eski5")
+
+[node name="WallBack" type="MeshInstance3D" parent="BoxTest/Box/Side3" unique_id=644527216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1)
+material_override = ExtResource("8_mhym6")
+mesh = SubResource("BoxMesh_pdf00")
+
+[node name="Side4" type="Node3D" parent="BoxTest/Box" unique_id=1478987443]
+
+[node name="Window" type="MeshInstance3D" parent="BoxTest/Box/Side4" unique_id=356316387]
+transform = Transform3D(-2.1855694e-08, -1, -2.1855694e-08, 0, -4.371139e-08, 0.5, -0.5, 4.371139e-08, 9.553427e-16, -1.5, 1.5, 0)
+material_override = ExtResource("9_a3se8")
+transparency = 1.0
+mesh = SubResource("PlaneMesh_45l4g")
+
+[node name="Object" type="MeshInstance3D" parent="BoxTest/Box/Side4" unique_id=415159525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+material_override = ExtResource("10_uty7l")
+mesh = SubResource("SphereMesh_4uo0j")
+
+[node name="WallLeft" type="MeshInstance3D" parent="BoxTest/Box/Side4" unique_id=375849481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)
+material_override = ExtResource("10_uty7l")
+mesh = SubResource("BoxMesh_vxl6d")
+
+[node name="WallRight" type="MeshInstance3D" parent="BoxTest/Box/Side4" unique_id=508607692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1)
+material_override = ExtResource("10_uty7l")
+mesh = SubResource("BoxMesh_eski5")
+
+[node name="WallBack" type="MeshInstance3D" parent="BoxTest/Box/Side4" unique_id=604217692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+material_override = ExtResource("10_uty7l")
+mesh = SubResource("BoxMesh_pdf00")
