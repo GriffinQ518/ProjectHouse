@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b4c2y4nv3bwhu"]
+
+[ext_resource type="Material" uid="uid://7l010hnolqtf" path="res://PrototypeScene/static.tres" id="1_8o5m8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2q3j8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8o5m8"]
+
+[node name="WallStatic" type="StaticBody3D" unique_id=2038538720]
+collision_layer = 2
+
+[node name="WallMesh" type="MeshInstance3D" parent="." unique_id=475919161]
+material_override = ExtResource("1_8o5m8")
+mesh = SubResource("BoxMesh_2q3j8")
+
+[node name="WallCollision" type="CollisionShape3D" parent="." unique_id=1553702555]
+shape = SubResource("BoxShape3D_8o5m8")

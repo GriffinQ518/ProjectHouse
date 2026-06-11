@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bno2uiyne4jrk"]
+
+[ext_resource type="Material" uid="uid://dfpn8rf4va4kc" path="res://PrototypeScene/maskhide.tres" id="1_ygdsn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1uuyv"]
+
+[node name="WallMesh" type="MeshInstance3D" unique_id=505617316]
+material_override = ExtResource("1_ygdsn")
+mesh = SubResource("BoxMesh_1uuyv")

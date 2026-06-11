@@ -3,14 +3,18 @@
 [ext_resource type="Script" uid="uid://cpnes3a5qk20o" path="res://player.gd" id="1_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+radius = 0.45
+height = 1.9
 
 [node name="Player" type="CharacterBody3D" unique_id=854424897 node_paths=PackedStringArray("camera_controller")]
+collision_mask = 6
 script = ExtResource("1_4flbx")
 walk_speed = 7
 run_speed = 14
 camera_controller = NodePath("CameraPivot/Camera3D")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="." unique_id=482504736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19506836, 0)
 shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="ModelPivot" type="Node3D" parent="." unique_id=839096947]
