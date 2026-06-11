@@ -12,5 +12,3 @@ mesh = SubResource("BoxMesh_pu3xe")
 
 [node name="Player" parent="." unique_id=854424897 instance=ExtResource("1_kaupt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-walk_speed = 7
-run_speed = 14
