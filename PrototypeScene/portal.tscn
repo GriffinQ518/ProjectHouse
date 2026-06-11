@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bnp7r0uf3bqxa"]
+
+[ext_resource type="Script" uid="uid://djklaoc2hryx" path="res://PrototypeScene/portal.gd" id="1_tsg0a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1dhld"]
+
+[node name="Portal" type="Area3D" unique_id=732458010]
+script = ExtResource("1_tsg0a")
+
+[node name="PortalCollision" type="CollisionShape3D" parent="." unique_id=1644078783]
+shape = SubResource("BoxShape3D_1dhld")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

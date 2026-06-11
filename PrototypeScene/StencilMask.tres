@@ -1,5 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://3tbg6glslyr6"]
 
 [resource]
+resource_local_to_scene = true
 stencil_mode = 3
 stencil_flags = 2
