@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ct58c8wac0qc5"]
+
+[ext_resource type="Material" uid="uid://7l010hnolqtf" path="res://PrototypeScene/static.tres" id="1_bs3ok"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jwe4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uydqf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5gvvo"]
+size = Vector3(1.2520142, 0.2520752, 1.251831)
+
+[node name="PedestalStatic" type="StaticBody3D" unique_id=2143746165]
+
+[node name="PedestalMesh" type="MeshInstance3D" parent="." unique_id=358200012]
+transform = Transform3D(1.25, 0, 0, 0, 0.25, 0, 0, 0, 1.25, 0, 0, 0)
+material_override = ExtResource("1_bs3ok")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4jwe4")
+
+[node name="HologramMesh" type="MeshInstance3D" parent="." unique_id=157006505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
+material_override = ExtResource("1_bs3ok")
+transparency = 0.75
+cast_shadow = 0
+mesh = SubResource("BoxMesh_uydqf")
+
+[node name="PedestalCollision" type="CollisionShape3D" parent="." unique_id=324082538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0005187988, 0.0017700195, -0.0004272461)
+shape = SubResource("BoxShape3D_5gvvo")
