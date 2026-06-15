@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://0ne3rkuvsvt5"]
+
+[ext_resource type="Material" uid="uid://7l010hnolqtf" path="res://PrototypeScene/static.tres" id="1_6hujt"]
+[ext_resource type="Material" uid="uid://dfpn8rf4va4kc" path="res://PrototypeScene/maskhide.tres" id="2_3mt0h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_udx2p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gks5e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j0xel"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yueqs"]
+
+[node name="BoxMoveable" type="RigidBody3D" unique_id=125676284]
+
+[node name="BoxMesh" type="MeshInstance3D" parent="." unique_id=270462626]
+material_override = ExtResource("1_6hujt")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_udx2p")
+
+[node name="BoxCollision" type="CollisionShape3D" parent="." unique_id=900253248]
+shape = SubResource("BoxShape3D_gks5e")
+
+[node name="BoxMeshMaskable1" type="MeshInstance3D" parent="." unique_id=1967280178]
+material_override = ExtResource("2_3mt0h")
+mesh = SubResource("BoxMesh_j0xel")
+
+[node name="BoxMeshMaskable2" type="MeshInstance3D" parent="." unique_id=1962743086]
+material_override = ExtResource("2_3mt0h")
+mesh = SubResource("BoxMesh_yueqs")
