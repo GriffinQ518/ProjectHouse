@@ -500,7 +500,6 @@ offset = Vector3(16, 0, 0)
 
 [node name="BoxMoveable" parent="SecondArea" unique_id=125676284 instance=ExtResource("8_liekf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 0)
-collision_layer = 8
 collision_mask = 2
 
 [node name="BoxMesh" parent="SecondArea/BoxMoveable" index="0" unique_id=270462626]

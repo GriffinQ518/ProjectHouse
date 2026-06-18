@@ -23,3 +23,6 @@ shape = SubResource("CapsuleShape3D_sh265")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=191109892]
+
+[node name="PickupPivot" type="Node3D" parent="CameraPivot/Camera3D" unique_id=1450364609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.65, -0.75)
