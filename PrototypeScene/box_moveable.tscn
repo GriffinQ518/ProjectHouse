@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://0ne3rkuvsvt5"]
 
-[ext_resource type="Script" uid="uid://cr77vfr3ryp82" path="res://PrototypeScene/box_moveable.gd" id="1_3mt0h"]
 [ext_resource type="Material" uid="uid://7l010hnolqtf" path="res://PrototypeScene/static.tres" id="1_6hujt"]
 [ext_resource type="Material" uid="uid://dfpn8rf4va4kc" path="res://PrototypeScene/maskhide.tres" id="2_3mt0h"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_udx2p"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_gks5e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_udx2p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_j0xel"]
 
@@ -15,15 +14,14 @@
 [node name="BoxMoveable" type="RigidBody3D" unique_id=125676284]
 collision_layer = 8
 collision_mask = 0
-script = ExtResource("1_3mt0h")
+
+[node name="BoxCollision" type="CollisionShape3D" parent="." unique_id=900253248]
+shape = SubResource("BoxShape3D_gks5e")
 
 [node name="BoxMesh" type="MeshInstance3D" parent="." unique_id=270462626]
 material_override = ExtResource("1_6hujt")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_udx2p")
-
-[node name="BoxCollision" type="CollisionShape3D" parent="." unique_id=900253248]
-shape = SubResource("BoxShape3D_gks5e")
 
 [node name="BoxMeshMaskable1" type="MeshInstance3D" parent="." unique_id=1967280178]
 material_override = ExtResource("2_3mt0h")

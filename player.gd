@@ -20,6 +20,11 @@ var camera_rotation: Vector3
 @export var camera_controller: Camera3D
 @export var mouse_sensitivity: float = 0.5
 
+const RAY_LENGTH = 1000.0
+var should_pick_up: bool = false
+var should_put_down: bool = false
+var event_position: Vector2
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	pass
@@ -27,6 +32,12 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):
 		get_tree().quit()
+	elif event.is_action_pressed("pick_up"):
+		should_pick_up = true
+		event_position = event.position
+	elif event.is_action_pressed("put_down"):
+		should_put_down = true
+		event_position = event.position
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -57,6 +68,27 @@ func update_camera(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	update_camera(delta)
 	
+	if should_pick_up:
+		var space_state = get_world_3d().direct_space_state
+		var from = camera_controller.project_ray_origin(event_position)
+		var to = from + camera_controller.project_ray_normal(event_position) * RAY_LENGTH
+		var query = PhysicsRayQueryParameters3D.create(from, to)
+		query.collide_with_areas = true
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)
+		if result:
+			var pickup = result.collider as RigidBody3D
+			if pickup != null:
+				pickup.freeze = true
+				var collider = pickup.get_child(0) as CollisionShape3D
+				print(collider)
+				collider.set_deferred("disabled", true)
+				pickup.reparent($CameraPivot/Camera3D/PickupPivot)
+				pickup.position = Vector3(0, 0, 0)
+		should_pick_up = false
+	
+	if should_put_down:
+		should_put_down = false
 	var direction = Vector3.ZERO
 	
 	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
