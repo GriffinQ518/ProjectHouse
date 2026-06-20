@@ -24,6 +24,10 @@ const RAY_LENGTH = 1000.0
 var should_pick_up: bool = false
 var should_put_down: bool = false
 var event_position: Vector2
+var original_parent: Node3D
+
+var pickup: RigidBody3D
+var collider: CollisionShape3D
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -77,17 +81,29 @@ func _physics_process(delta: float) -> void:
 		query.exclude = [self]
 		var result = space_state.intersect_ray(query)
 		if result:
-			var pickup = result.collider as RigidBody3D
+			pickup = result.collider as RigidBody3D
 			if pickup != null:
 				pickup.freeze = true
-				var collider = pickup.get_child(0) as CollisionShape3D
-				print(collider)
+				collider = pickup.get_child(0) as CollisionShape3D
 				collider.set_deferred("disabled", true)
+				original_parent = pickup.get_parent()
 				pickup.reparent($CameraPivot/Camera3D/PickupPivot)
 				pickup.position = Vector3(0, 0, 0)
 		should_pick_up = false
 	
 	if should_put_down:
+		var space_state = get_world_3d().direct_space_state
+		var from = camera_controller.project_ray_origin(event_position)
+		var to = from + camera_controller.project_ray_normal(event_position) * RAY_LENGTH
+		var query = PhysicsRayQueryParameters3D.create(from, to)
+		query.collide_with_areas = true
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)
+		if pickup != null:
+			pickup.freeze = false
+			collider.set_deferred("disabled", false)
+			pickup.reparent(original_parent)
+			pickup.global_position = result.position
 		should_put_down = false
 	var direction = Vector3.ZERO
 	

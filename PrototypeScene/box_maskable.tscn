@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cowg1074as3nf"]
+
+[ext_resource type="Material" uid="uid://dfpn8rf4va4kc" path="res://PrototypeScene/maskhide.tres" id="1_kc8ds"]
+[ext_resource type="Script" uid="uid://c4twq077mb2fb" path="res://box_maskable.gd" id="2_uyr67"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5d3s3"]
+
+[node name="BoxMaskable" type="MeshInstance3D" unique_id=486818372]
+material_override = ExtResource("1_kc8ds")
+mesh = SubResource("BoxMesh_5d3s3")
+script = ExtResource("2_uyr67")
