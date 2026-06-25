@@ -1,14 +1,53 @@
 [gd_scene format=3 uid="uid://0ne3rkuvsvt5"]
 
+[ext_resource type="Script" uid="uid://cr77vfr3ryp82" path="res://PrototypeScene/box_moveable.gd" id="1_3mt0h"]
 [ext_resource type="Material" uid="uid://7l010hnolqtf" path="res://PrototypeScene/static.tres" id="1_6hujt"]
+[ext_resource type="PackedScene" uid="uid://cowg1074as3nf" path="res://PrototypeScene/box_maskable.tscn" id="2_6hujt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gks5e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_udx2p"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mt0h"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udx2p"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gks5e"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0xel"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 2
+
 [node name="BoxMoveable" type="RigidBody3D" unique_id=125676284]
 collision_layer = 8
 collision_mask = 0
+script = ExtResource("1_3mt0h")
 
 [node name="BoxCollision" type="CollisionShape3D" parent="." unique_id=900253248]
 shape = SubResource("BoxShape3D_gks5e")
@@ -17,5 +56,21 @@ shape = SubResource("BoxShape3D_gks5e")
 material_override = ExtResource("1_6hujt")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_udx2p")
+
+[node name="Mask1" parent="." unique_id=486818372 node_paths=PackedStringArray("target") instance=ExtResource("2_6hujt")]
+material_override = SubResource("StandardMaterial3D_3mt0h")
+target = NodePath("..")
+
+[node name="Mask2" parent="." unique_id=1710045420 node_paths=PackedStringArray("target") instance=ExtResource("2_6hujt")]
+material_override = SubResource("StandardMaterial3D_udx2p")
+target = NodePath("..")
+
+[node name="Mask3" parent="." unique_id=1849991407 node_paths=PackedStringArray("target") instance=ExtResource("2_6hujt")]
+material_override = SubResource("StandardMaterial3D_gks5e")
+target = NodePath("..")
+
+[node name="Mask4" parent="." unique_id=885410833 node_paths=PackedStringArray("target") instance=ExtResource("2_6hujt")]
+material_override = SubResource("StandardMaterial3D_j0xel")
+target = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
