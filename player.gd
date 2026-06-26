@@ -104,6 +104,7 @@ func _physics_process(delta: float) -> void:
 			collider.set_deferred("disabled", false)
 			pickup.reparent(original_parent)
 			pickup.global_position = result.position
+			pickup = null
 		should_put_down = false
 	var direction = Vector3.ZERO
 	

@@ -4,10 +4,17 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1dhld"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_tsg0a"]
+
 [node name="Portal" type="Area3D" unique_id=732458010]
 script = ExtResource("1_tsg0a")
 
 [node name="PortalCollision" type="CollisionShape3D" parent="." unique_id=1644078783]
 shape = SubResource("BoxShape3D_1dhld")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=91395943]
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("BoxMesh_tsg0a")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
