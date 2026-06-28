@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgf0kvkoo0xn5" path="res://PrototypeScene/pedestal_static.gd" id="1_0gbta"]
 [ext_resource type="Material" uid="uid://7l010hnolqtf" path="res://PrototypeScene/static.tres" id="1_bs3ok"]
+[ext_resource type="PackedScene" uid="uid://cpcb36g1stwd" path="res://PrototypeScene/pedestal_maskable.tscn" id="3_au7w0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4jwe4"]
 
@@ -9,6 +10,14 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5gvvo"]
 size = Vector3(1.2520142, 0.2520752, 1.251831)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_di5kv"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
 
 [node name="PedestalStatic" type="Area3D" unique_id=1779890439]
 collision_layer = 2
@@ -32,4 +41,15 @@ mesh = SubResource("BoxMesh_uydqf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0005187988, 0.0017700195, -0.0004272461)
 shape = SubResource("BoxShape3D_5gvvo")
 
+[node name="PedestalMaskable" parent="." unique_id=9441206 node_paths=PackedStringArray("target") instance=ExtResource("3_au7w0")]
+target = NodePath("..")
+
+[node name="PedestalMesh" parent="PedestalMaskable" index="0" unique_id=358200012]
+material_override = SubResource("StandardMaterial3D_di5kv")
+
+[node name="HologramMesh" parent="PedestalMaskable" index="1" unique_id=157006505]
+material_override = SubResource("StandardMaterial3D_di5kv")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="PedestalMaskable"]

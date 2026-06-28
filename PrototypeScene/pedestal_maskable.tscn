@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://cpcb36g1stwd"]
 
 [ext_resource type="Material" uid="uid://dfpn8rf4va4kc" path="res://PrototypeScene/maskhide.tres" id="1_8f2nj"]
+[ext_resource type="Script" uid="uid://brn4iv01anvyn" path="res://PrototypeScene/pedestal_maskable.gd" id="1_lkdxc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4jwe4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uydqf"]
 
 [node name="PedestalMaskable" type="Node3D" unique_id=9441206]
+script = ExtResource("1_lkdxc")
 
 [node name="PedestalMesh" type="MeshInstance3D" parent="." unique_id=358200012]
 transform = Transform3D(1.25, 0, 0, 0, 0.25, 0, 0, 0, 1.25, 0, 0, 0)
