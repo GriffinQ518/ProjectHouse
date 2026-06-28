@@ -132,12 +132,12 @@ resource_local_to_scene = true
 albedo_color = Color(1, 0, 0, 1)
 ao_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ak1f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cya7v"]
 resource_local_to_scene = true
 albedo_color = Color(0, 1, 0, 1)
 ao_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p8u2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8m73"]
 resource_local_to_scene = true
 render_priority = 1
 transparency = 1
@@ -146,12 +146,12 @@ stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cya7v"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ak1f"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 1, 1)
 ao_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8m73"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p8u2"]
 resource_local_to_scene = true
 render_priority = 1
 transparency = 1
@@ -248,10 +248,29 @@ resource_local_to_scene = true
 albedo_color = Color(0, 0, 1, 1)
 ao_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xpnw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxjq5"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 1, 1)
 ao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpsp4"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+albedo_color = Color(0, 0, 1, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xpnw"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+albedo_color = Color(0, 0, 1, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okfh1"]
 resource_local_to_scene = true
@@ -274,32 +293,68 @@ stencil_compare = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wr40"]
 resource_local_to_scene = true
-render_priority = 1
-transparency = 1
-albedo_color = Color(0, 0, 1, 1)
 stencil_mode = 3
-stencil_flags = 1
-stencil_compare = 2
+stencil_flags = 2
 stencil_reference = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrybx"]
 resource_local_to_scene = true
+albedo_color = Color(1, 1, 0, 1)
+ao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xij0"]
+resource_local_to_scene = true
+albedo_color = Color(1, 1, 0, 1)
+ao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yscy0"]
+resource_local_to_scene = true
+albedo_color = Color(1, 1, 0, 1)
+ao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uea8q"]
+resource_local_to_scene = true
 render_priority = 1
 transparency = 1
-albedo_color = Color(0, 0, 1, 1)
+albedo_color = Color(1, 1, 0, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1imm"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+albedo_color = Color(1, 1, 0, 1)
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxjq5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3twis"]
 resource_local_to_scene = true
+render_priority = 1
+transparency = 1
 albedo_color = Color(1, 1, 0, 1)
-ao_enabled = true
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpsp4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87tu3"]
 resource_local_to_scene = true
+render_priority = 1
+transparency = 1
 albedo_color = Color(1, 1, 0, 1)
-ao_enabled = true
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yh5qd"]
+resource_local_to_scene = true
+stencil_mode = 3
+stencil_flags = 2
+stencil_reference = 4
 
 [node name="Prototype" type="Node3D" unique_id=1509231267]
 
@@ -479,38 +534,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.125, -5)
 pedestal_ID = 1
 
 [node name="PedestalMesh" parent="FirstArea/PedestalStatic" index="0" unique_id=358200012]
-material_override = SubResource("StandardMaterial3D_3ak1f")
+material_override = SubResource("StandardMaterial3D_cya7v")
 
 [node name="HologramMesh" parent="FirstArea/PedestalStatic" index="1" unique_id=157006505]
-material_override = SubResource("StandardMaterial3D_3ak1f")
+material_override = SubResource("StandardMaterial3D_cya7v")
 
 [node name="PedestalMaskable" parent="FirstArea/PedestalStatic" index="3" unique_id=9441206]
 offset = Vector3(0, 0, 16)
 
 [node name="PedestalMesh" parent="FirstArea/PedestalStatic/PedestalMaskable" index="0" unique_id=358200012]
-material_override = SubResource("StandardMaterial3D_5p8u2")
+material_override = SubResource("StandardMaterial3D_x8m73")
 
 [node name="HologramMesh" parent="FirstArea/PedestalStatic/PedestalMaskable" index="1" unique_id=157006505]
-material_override = SubResource("StandardMaterial3D_5p8u2")
+material_override = SubResource("StandardMaterial3D_x8m73")
 
 [node name="PedestalStatic2" parent="FirstArea" unique_id=2143746165 instance=ExtResource("7_sgqbn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, -5)
 pedestal_ID = 2
 
 [node name="PedestalMesh" parent="FirstArea/PedestalStatic2" index="0" unique_id=358200012]
-material_override = SubResource("StandardMaterial3D_cya7v")
+material_override = SubResource("StandardMaterial3D_3ak1f")
 
 [node name="HologramMesh" parent="FirstArea/PedestalStatic2" index="1" unique_id=157006505]
-material_override = SubResource("StandardMaterial3D_cya7v")
+material_override = SubResource("StandardMaterial3D_3ak1f")
 
 [node name="PedestalMaskable" parent="FirstArea/PedestalStatic2" index="3" unique_id=9441206]
 offset = Vector3(0, 0, 16)
 
 [node name="PedestalMesh" parent="FirstArea/PedestalStatic2/PedestalMaskable" index="0" unique_id=358200012]
-material_override = SubResource("StandardMaterial3D_x8m73")
+material_override = SubResource("StandardMaterial3D_5p8u2")
 
 [node name="HologramMesh" parent="FirstArea/PedestalStatic2/PedestalMaskable" index="1" unique_id=157006505]
-material_override = SubResource("StandardMaterial3D_x8m73")
+material_override = SubResource("StandardMaterial3D_5p8u2")
 
 [node name="PedestalStatic3" parent="FirstArea" unique_id=783375960 instance=ExtResource("7_sgqbn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.125, -5)
@@ -588,7 +643,6 @@ offset = Vector3(16, 0, 0)
 
 [node name="BoxMoveable" parent="SecondArea" unique_id=125676284 instance=ExtResource("8_liekf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 0)
-collision_mask = 2
 pedestal_ID = 1
 
 [node name="BoxMesh" parent="SecondArea/BoxMoveable" index="1" unique_id=270462626]
@@ -667,32 +721,37 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 1, -1.5)
 offset = Vector3(0, 0, -16)
 
 [node name="BoxMoveable" parent="ThirdArea" unique_id=1186781423 instance=ExtResource("8_liekf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -10.677108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5)
 pedestal_ID = 2
 
 [node name="BoxMesh" parent="ThirdArea/BoxMoveable" index="1" unique_id=270462626]
-material_override = SubResource("StandardMaterial3D_5xpnw")
+material_override = SubResource("StandardMaterial3D_jxjq5")
 
 [node name="Mask1" parent="ThirdArea/BoxMoveable" index="2" unique_id=486818372]
-material_override = SubResource("StandardMaterial3D_okfh1")
+material_override = SubResource("StandardMaterial3D_vpsp4")
 offset = Vector3(0, 0, -16)
 
 [node name="Mask2" parent="ThirdArea/BoxMoveable" index="3" unique_id=1710045420]
-material_override = SubResource("StandardMaterial3D_yxlil")
+material_override = SubResource("StandardMaterial3D_5xpnw")
 offset = Vector3(0, 0, -16)
 
 [node name="Mask3" parent="ThirdArea/BoxMoveable" index="4" unique_id=1849991407]
-material_override = SubResource("StandardMaterial3D_1wr40")
+material_override = SubResource("StandardMaterial3D_okfh1")
 offset = Vector3(0, 0, 16)
 
 [node name="Mask4" parent="ThirdArea/BoxMoveable" index="5" unique_id=885410833]
-material_override = SubResource("StandardMaterial3D_qrybx")
+material_override = SubResource("StandardMaterial3D_yxlil")
 offset = Vector3(0, 0, 16)
 
+[node name="Window" parent="ThirdArea" unique_id=1574824654 instance=ExtResource("4_my86y")]
+transform = Transform3D(1.9106855e-15, -8.742278e-09, -1, -1, -8.742278e-09, 0, -4.371139e-08, 0.2, -4.371139e-08, 0, 1, -1.75)
+material_override = SubResource("StandardMaterial3D_1wr40")
+cast_shadow = 0
+
 [node name="FourthArea" type="Node3D" parent="." unique_id=435110593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 
 [node name="Statics" type="Node3D" parent="FourthArea" unique_id=1498185455]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 
 [node name="Floor" parent="FourthArea/Statics" unique_id=382092482 instance=ExtResource("2_pu3xe")]
 transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, -0.5, 0)
@@ -719,13 +778,13 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -1, 1, 1)
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, -1)
 
 [node name="WallMesh" parent="FourthArea/Statics/YellowLeft" index="0" unique_id=475919161]
-material_override = SubResource("StandardMaterial3D_jxjq5")
+material_override = SubResource("StandardMaterial3D_qrybx")
 
 [node name="YellowRight" parent="FourthArea/Statics" unique_id=1021638099 instance=ExtResource("2_pu3xe")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 1)
 
 [node name="WallMesh" parent="FourthArea/Statics/YellowRight" index="0" unique_id=475919161]
-material_override = SubResource("StandardMaterial3D_vpsp4")
+material_override = SubResource("StandardMaterial3D_4xij0")
 
 [node name="PillarBackLeft" parent="FourthArea/Statics" unique_id=1377466710 instance=ExtResource("2_pu3xe")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -1, 1, -1)
@@ -737,8 +796,36 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 1, 1, 1)
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 1, 1, -1)
 
 [node name="Portal" parent="FourthArea" unique_id=934076791 instance=ExtResource("5_my86y")]
-transform = Transform3D(-4.371139e-08, 0, 0.1, 0, 2, 0, -1, 0, -4.371139e-09, 14.5, 1, 0)
+transform = Transform3D(-4.371139e-08, 0, 0.1, 0, 2, 0, -1, 0, -4.371139e-09, -1.5, 1, 0)
 offset = Vector3(-16, 0, 0)
+
+[node name="BoxMoveable" parent="FourthArea" unique_id=732999062 instance=ExtResource("8_liekf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0)
+pedestal_ID = 3
+
+[node name="BoxMesh" parent="FourthArea/BoxMoveable" index="1" unique_id=270462626]
+material_override = SubResource("StandardMaterial3D_yscy0")
+
+[node name="Mask1" parent="FourthArea/BoxMoveable" index="2" unique_id=486818372]
+material_override = SubResource("StandardMaterial3D_uea8q")
+offset = Vector3(-16, 0, 0)
+
+[node name="Mask2" parent="FourthArea/BoxMoveable" index="3" unique_id=1710045420]
+material_override = SubResource("StandardMaterial3D_l1imm")
+offset = Vector3(0, 0, -16)
+
+[node name="Mask3" parent="FourthArea/BoxMoveable" index="4" unique_id=1849991407]
+material_override = SubResource("StandardMaterial3D_3twis")
+offset = Vector3(16, 0, 0)
+
+[node name="Mask4" parent="FourthArea/BoxMoveable" index="5" unique_id=885410833]
+material_override = SubResource("StandardMaterial3D_87tu3")
+offset = Vector3(0, 0, 16)
+
+[node name="Window" parent="FourthArea" unique_id=1466406677 instance=ExtResource("4_my86y")]
+transform = Transform3D(-4.371139e-08, 0.2, 0, -1, -8.742278e-09, 0, 0, 0, 1, -1.75, 1, 0)
+material_override = SubResource("StandardMaterial3D_yh5qd")
+cast_shadow = 0
 
 [editable path="FirstArea/Statics/RedLeft"]
 [editable path="FirstArea/Statics/RedRight"]
@@ -756,3 +843,4 @@ offset = Vector3(-16, 0, 0)
 [editable path="ThirdArea/BoxMoveable"]
 [editable path="FourthArea/Statics/YellowLeft"]
 [editable path="FourthArea/Statics/YellowRight"]
+[editable path="FourthArea/BoxMoveable"]

@@ -46,7 +46,7 @@ stencil_reference = 2
 
 [node name="BoxMoveable" type="RigidBody3D" unique_id=125676284]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_3mt0h")
 
 [node name="BoxCollision" type="CollisionShape3D" parent="." unique_id=900253248]
