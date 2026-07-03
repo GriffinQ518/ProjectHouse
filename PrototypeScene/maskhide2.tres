@@ -1,10 +1,10 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dfpn8rf4va4kc"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2crivty3i1m2"]
 
 [resource]
 resource_local_to_scene = true
 render_priority = 1
 transparency = 1
-albedo_color = Color(0.16862746, 0.105882354, 0.050980393, 1)
+albedo_color = Color(0, 1, 0, 1)
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 2

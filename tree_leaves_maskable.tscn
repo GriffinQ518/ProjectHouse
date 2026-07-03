@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cwqtlrtqcwixo"]
+
+[ext_resource type="Material" uid="uid://dfpn8rf4va4kc" path="res://PrototypeScene/maskhide.tres" id="1_f0pl8"]
+[ext_resource type="Script" uid="uid://bahnbep3s7g8q" path="res://tree_leaves_maskable.gd" id="1_m3e3x"]
+[ext_resource type="Material" uid="uid://c2crivty3i1m2" path="res://PrototypeScene/maskhide2.tres" id="2_m3e3x"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8err1"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v0r74"]
+radius = 2.0
+height = 4.0
+
+[node name="TreeLeavesMaskable" type="Node3D" unique_id=1152628948]
+script = ExtResource("1_m3e3x")
+
+[node name="TrunkMaskable" type="MeshInstance3D" parent="." unique_id=1597220624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = ExtResource("1_f0pl8")
+mesh = SubResource("CylinderMesh_8err1")
+
+[node name="LeavesMaskable" type="MeshInstance3D" parent="." unique_id=2083146120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = ExtResource("2_m3e3x")
+mesh = SubResource("CapsuleMesh_v0r74")
